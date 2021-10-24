@@ -1,63 +1,77 @@
 /*
-Objective
-In this challenge, we practice reading input from stdin and printing output to stdout.
+Some C++ data types, their format specifiers, and their most common bit widths are as follows:
 
-In C++, you can read a single whitespace-separated token of input using cin, and print output to stdout using cout. For example, let's say we declare the following variables:
+- Int ("%d"): 32 Bit integer
+- Long ("%ld"): 64 bit integer
+- Char ("%c"): Character type
+- Float ("%f"): 32 bit real value
+- Double ("%lf"): 64 bit real value
 
-string s;
-int n;
-and we want to use cin to read the input "High 5" from stdin. We can do this with the following code:
+Reading
+To read a data type, use the following syntax:
 
-cin >> s >> n;
-This reads the first word ("High") from stdin and saves it as string , then reads the second word ("") from stdin and saves it as integer . If we want to print these values to stdout, separated by a space, we write the following code:
+scanf("`format_specifier`", &val)
+For example, to read a character followed by a double:
 
-cout << s << " " << n << endl;
-This code prints the contents of string , a single space (), then the integer . We end our line of output with a newline using endl. This results in the following output:
+char ch;
+double d;
+scanf("%c %lf", &ch, &d);
+For the moment, we can ignore the spacing between format specifiers.
 
-High 5
-Task
-Read  numbers from stdin and print their sum to stdout.
+Printing
+To print a data type, use the following syntax:
+
+printf("`format_specifier`", val)
+For example, to print a character followed by a double:
+
+char ch = 'd';
+double d = 234.432;
+printf("%c %lf", ch, d);
+Note: You can also use cin and cout instead of scanf and printf; however, if you are taking a million numbers as input and printing a million lines, it is faster to use scanf and printf.
 
 Input Format
 
-One line that contains  space-separated integers: , , and .
-
-Constraints
+Input consists of the following space-separated values: int, long, char, float, and double, respectively.
 
 Output Format
 
-Print the sum of the three numbers on a single line.
+Print each element on a new line in the same order it was received as input. Note that the floating point value should be correct up to 3 decimal places and the double to 9 decimal places.
 
 Sample Input
 
-1 2 7
+3 12345678912345 a 334.23 14049.30493
 Sample Output
 
-10
+3
+12345678912345
+a
+334.230
+14049.304930000
 Explanation
 
-The sum of the three numbers is 1+2+7 = 10 .
+Print int 3,
+followed by long 12345678912345,
+followed by char a ,
+followed by float 334.23 ,
+followed by double 14049.30493.
 
 */
 
 
 
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+#include <cstdio>
+#include <bits/stdc++.h>
 using namespace std;
 
-
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
-    int n;
-    int sum = 0;
-    for(int i =0;i< 3;i++){
-        cin >> n;
-        sum = sum + n;
-    }
-    cout<< sum;
+    // Complete the code.
+    int a; long long b; char c; float d; double e;
+    cin >> a >> b >> c >> d >> e;
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    cout << fixed << setprecision(3) << d << endl;
+    cout << fixed << setprecision(9) << e << endl;
     return 0;
 }
