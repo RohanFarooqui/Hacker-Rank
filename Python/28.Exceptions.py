@@ -62,3 +62,27 @@ Error Code: invalid literal for int() with base 10: '$'
 3
 
 '''
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+calculate = []
+ans = []
+
+
+
+x = int(input())
+
+for i in range(0,x):
+    y = input().split()
+    calculate.append(y)
+
+
+for y in calculate:
+    try:
+        a = int(y[0])// int(y[1])
+        ans.append(a)
+    except Exception as e:
+       ans.append("Error Code: "+str(e))
+       
+for j in ans:
+    print(j)
