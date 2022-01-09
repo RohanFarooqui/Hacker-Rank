@@ -71,3 +71,11 @@ Here, ([154,161,167,171,174,176,182]) set is the set containing the distinct hei
 
     Average = (1355/ 8) = 168.375
 '''
+def average(array):
+    return sum(set(array))/len(set(array))
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
