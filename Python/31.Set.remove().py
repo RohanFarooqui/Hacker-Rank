@@ -92,3 +92,19 @@ After completing these 10 operations on the set ([4]), we get set. Hence, the su
 
 Note: Convert the elements of set s to integers while you are assigning them. To ensure the proper input of the set, we have added the first two lines of code to the editor.
 '''
+n=int(input())
+
+s = set(map(int,input().split()))
+
+N=int(input())
+
+for i in range(N) :
+    choice=input().split()
+    if choice[0]=="pop" :
+        s.pop()
+    elif choice[0]=="remove" :
+        s.remove(int(choice[1]))
+    elif choice[0]=="discard" :
+        s.discard(int(choice[1]))
+        
+print (sum(s))
