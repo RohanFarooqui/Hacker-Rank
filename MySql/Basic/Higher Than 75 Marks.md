@@ -31,13 +31,5 @@ Only Ashley, Julia, and Belvet have Marks > 75 . If you look at the last three c
 
 ## Solution :
 
-SELECT DISTINCT(CITY) 
-from 
-    STATION 
-WHERE
-    LEFT(CITY,1) NOT IN ('a','e','i','o','u')
-and 
-    LEFT(CITY,1) NOT IN ('A','E','I','O','U')
-and
-    RIGHT(CITY,1) NOT IN ('a','e','i','o','u')
+SELECT NAME from STUDENTS WHERE Marks > 75 order by RIGHT(NAME,3),ID
  
